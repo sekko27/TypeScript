@@ -1315,7 +1315,9 @@ namespace ts {
                     decoratorExpressions.push(emitHelpers().createMetadataHelper("design:type", serializeTypeOfNode(node)));
                 }
                 if (shouldAddParamTypesMetadata(node)) {
-                    decoratorExpressions.push(emitHelpers().createMetadataHelper("design:paramtypes", serializeParameterTypesOfNode(node, container)));
+                    const [types, names] = serializeParametersOfNode(node, container);
+                    decoratorExpressions.push(emitHelpers().createMetadataHelper("design:paramtypes", types));
+                    decoratorExpressions.push(emitHelpers().createMetadataHelper("design:paramnames", names));
                 }
                 if (shouldAddReturnTypeMetadata(node)) {
                     decoratorExpressions.push(emitHelpers().createMetadataHelper("design:returntype", serializeReturnTypeOfNode(node)));
@@ -1330,7 +1332,9 @@ namespace ts {
                     (properties || (properties = [])).push(factory.createPropertyAssignment("type", factory.createArrowFunction(/*modifiers*/ undefined, /*typeParameters*/ undefined, [], /*type*/ undefined, factory.createToken(SyntaxKind.EqualsGreaterThanToken), serializeTypeOfNode(node))));
                 }
                 if (shouldAddParamTypesMetadata(node)) {
-                    (properties || (properties = [])).push(factory.createPropertyAssignment("paramTypes", factory.createArrowFunction(/*modifiers*/ undefined, /*typeParameters*/ undefined, [], /*type*/ undefined, factory.createToken(SyntaxKind.EqualsGreaterThanToken), serializeParameterTypesOfNode(node, container))));
+                    const [types, names] = serializeParametersOfNode(node, container);
+                    (properties || (properties = [])).push(factory.createPropertyAssignment("paramTypes", factory.createArrowFunction(/*modifiers*/ undefined, /*typeParameters*/ undefined, [], /*type*/ undefined, factory.createToken(SyntaxKind.EqualsGreaterThanToken), types)));
+                    (properties || (properties = [])).push(factory.createPropertyAssignment("paramNames", factory.createArrowFunction(/*modifiers*/ undefined, /*typeParameters*/ undefined, [], /*type*/ undefined, factory.createToken(SyntaxKind.EqualsGreaterThanToken), names)));
                 }
                 if (shouldAddReturnTypeMetadata(node)) {
                     (properties || (properties = [])).push(factory.createPropertyAssignment("returnType", factory.createArrowFunction(/*modifiers*/ undefined, /*typeParameters*/ undefined, [], /*type*/ undefined, factory.createToken(SyntaxKind.EqualsGreaterThanToken), serializeReturnTypeOfNode(node))));
@@ -1423,7 +1427,7 @@ namespace ts {
          *
          * @param node The node that should have its parameter types serialized.
          */
-        function serializeParameterTypesOfNode(node: Node, container: ClassLikeDeclaration): ArrayLiteralExpression {
+        function serializeParametersOfNode(node: Node, container: ClassLikeDeclaration): [ArrayLiteralExpression, ArrayLiteralExpression] {
             const valueDeclaration =
                 isClassLike(node)
                     ? getFirstConstructorWithBody(node)
@@ -1431,7 +1435,9 @@ namespace ts {
                         ? node
                         : undefined;
 
-            const expressions: SerializedTypeNode[] = [];
+            const typeExpressions: SerializedTypeNode[] = [];
+            const nameExpressions: Expression[] = [];
+
             if (valueDeclaration) {
                 const parameters = getParametersOfDecoratedDeclaration(valueDeclaration, container);
                 const numParameters = parameters.length;
@@ -1440,16 +1446,24 @@ namespace ts {
                     if (i === 0 && isIdentifier(parameter.name) && parameter.name.escapedText === "this") {
                         continue;
                     }
+                    const name: Expression = isIdentifier(parameter.name) && isString(parameter.name.escapedText)
+                        ? factory.createStringLiteral(parameter.name.escapedText)
+                        : factory.createVoidZero();
+                    nameExpressions.push(name);
+
                     if (parameter.dotDotDotToken) {
-                        expressions.push(serializeTypeNode(getRestParameterElementType(parameter.type)));
+                        typeExpressions.push(serializeTypeNode(getRestParameterElementType(parameter.type)));
                     }
                     else {
-                        expressions.push(serializeTypeOfNode(parameter));
+                        typeExpressions.push(serializeTypeOfNode(parameter));
                     }
                 }
             }
 
-            return factory.createArrayLiteralExpression(expressions);
+            return [
+                factory.createArrayLiteralExpression(typeExpressions),
+                factory.createArrayLiteralExpression(nameExpressions),
+            ];
         }
 
         function getParametersOfDecoratedDeclaration(node: SignatureDeclaration, container: ClassLikeDeclaration) {
