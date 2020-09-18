@@ -44,11 +44,13 @@ var A = /** @class */ (function () {
         MyMethodDecorator,
         __metadata("design:type", Function),
         __metadata("design:paramtypes", [Object]),
+        __metadata("design:paramnames", ["args"]),
         __metadata("design:returntype", void 0)
     ], A.prototype, "method", null);
     A = __decorate([
         MyClassDecorator,
-        __metadata("design:paramtypes", [Object])
+        __metadata("design:paramtypes", [Object]),
+        __metadata("design:paramnames", ["args"])
     ], A);
     return A;
 }());
@@ -69,11 +71,13 @@ var B = /** @class */ (function () {
         MyMethodDecorator,
         __metadata("design:type", Function),
         __metadata("design:paramtypes", [String]),
+        __metadata("design:paramnames", ["args"]),
         __metadata("design:returntype", void 0)
     ], B.prototype, "method", null);
     B = __decorate([
         MyClassDecorator,
-        __metadata("design:paramtypes", [Number])
+        __metadata("design:paramtypes", [Number]),
+        __metadata("design:paramnames", ["args"])
     ], B);
     return B;
 }());

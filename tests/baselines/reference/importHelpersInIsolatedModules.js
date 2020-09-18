@@ -61,6 +61,7 @@ var C = /** @class */ (function () {
         tslib_1.__param(0, dec),
         tslib_1.__metadata("design:type", Function),
         tslib_1.__metadata("design:paramtypes", [Number]),
+        tslib_1.__metadata("design:paramnames", ["x"]),
         tslib_1.__metadata("design:returntype", void 0)
     ], C.prototype, "method", null);
     C = tslib_1.__decorate([
@@ -91,6 +92,7 @@ var C = /** @class */ (function () {
         tslib_1.__param(0, dec),
         tslib_1.__metadata("design:type", Function),
         tslib_1.__metadata("design:paramtypes", [Number]),
+        tslib_1.__metadata("design:paramnames", ["x"]),
         tslib_1.__metadata("design:returntype", void 0)
     ], C.prototype, "method", null);
     C = tslib_1.__decorate([

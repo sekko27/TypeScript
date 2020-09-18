@@ -18,7 +18,8 @@ var MyClass1 = /** @class */ (function () {
     var _a;
     MyClass1 = __decorate([
         foo,
-        __metadata("design:paramtypes", [typeof (_a = typeof ng !== "undefined" && ng.ElementRef) === "function" ? _a : Object])
+        __metadata("design:paramtypes", [typeof (_a = typeof ng !== "undefined" && ng.ElementRef) === "function" ? _a : Object]),
+        __metadata("design:paramnames", ["_elementRef"])
     ], MyClass1);
     return MyClass1;
 }());

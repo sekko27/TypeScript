@@ -50,7 +50,8 @@ var B = /** @class */ (function () {
     }
     B = __decorate([
         dec,
-        __metadata("design:paramtypes", [Number])
+        __metadata("design:paramtypes", [Number]),
+        __metadata("design:paramnames", ["x"])
     ], B);
     return B;
 }());

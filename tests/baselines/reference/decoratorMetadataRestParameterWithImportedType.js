@@ -108,11 +108,13 @@ var ClassA = /** @class */ (function () {
         annotation1(),
         __metadata("design:type", Function),
         __metadata("design:paramtypes", [aux1_1.SomeClass1]),
+        __metadata("design:paramnames", ["args"]),
         __metadata("design:returntype", void 0)
     ], ClassA.prototype, "foo", null);
     ClassA = __decorate([
         annotation(),
-        __metadata("design:paramtypes", [aux_1.SomeClass])
+        __metadata("design:paramtypes", [aux_1.SomeClass]),
+        __metadata("design:paramnames", ["init"])
     ], ClassA);
     return ClassA;
 }());

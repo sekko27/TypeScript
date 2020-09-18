@@ -217,7 +217,8 @@ let A = class A {
 };
 A = __decorate([
     ((_) => { }),
-    __metadata("design:paramtypes", [B])
+    __metadata("design:paramtypes", [B]),
+    __metadata("design:paramnames", ["p"])
 ], A);
 export { A };
 

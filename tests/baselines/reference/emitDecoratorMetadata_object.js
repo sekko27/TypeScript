@@ -28,11 +28,13 @@ var A = /** @class */ (function () {
         MyMethodDecorator,
         __metadata("design:type", Function),
         __metadata("design:paramtypes", [Object]),
+        __metadata("design:paramnames", ["there"]),
         __metadata("design:returntype", void 0)
     ], A.prototype, "method", null);
     A = __decorate([
         MyClassDecorator,
-        __metadata("design:paramtypes", [Object])
+        __metadata("design:paramtypes", [Object]),
+        __metadata("design:paramnames", ["hi"])
     ], A);
     return A;
 }());

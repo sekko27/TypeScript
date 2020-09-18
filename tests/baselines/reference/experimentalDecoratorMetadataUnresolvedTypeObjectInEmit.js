@@ -37,6 +37,7 @@ var Foo = /** @class */ (function () {
         __param(0, decorate),
         __metadata("design:type", Function),
         __metadata("design:paramtypes", [typeof (_d = typeof A !== "undefined" && (_a = A.B) !== void 0 && (_b = _a.C) !== void 0 && (_c = _b.D) !== void 0 && _c.E) === "function" ? _d : Object]),
+        __metadata("design:paramnames", ["user"]),
         __metadata("design:returntype", void 0)
     ], Foo.prototype, "f");
     return Foo;

@@ -65,6 +65,7 @@ var Bar = /** @class */ (function () {
         __param(0, foo),
         __metadata("design:type", Function),
         __metadata("design:paramtypes", [Object, yoha_1.Yoha]),
+        __metadata("design:paramnames", ["yoha", "bar"]),
         __metadata("design:returntype", void 0)
     ], Bar.prototype, "yoha");
     return Bar;
@@ -104,6 +105,7 @@ var Bar = /** @class */ (function () {
         __param(0, foo),
         __metadata("design:type", Function),
         __metadata("design:paramtypes", [Object, yoha_1.Yoha]),
+        __metadata("design:paramnames", ["yoha", "bar"]),
         __metadata("design:returntype", void 0)
     ], Bar.prototype, "yoha");
     return Bar;

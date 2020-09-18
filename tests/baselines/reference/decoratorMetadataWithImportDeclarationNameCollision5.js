@@ -49,7 +49,8 @@ var MyClass = /** @class */ (function () {
     }
     MyClass = __decorate([
         someDecorator,
-        __metadata("design:paramtypes", [db_1.default])
+        __metadata("design:paramtypes", [db_1.default]),
+        __metadata("design:paramnames", ["db"])
     ], MyClass);
     return MyClass;
 }());

@@ -47,7 +47,8 @@ var MyComponent = /** @class */ (function () {
     __decorate([
         Input(),
         __metadata("design:type", TemplateRef),
-        __metadata("design:paramtypes", [TemplateRef])
+        __metadata("design:paramtypes", [TemplateRef]),
+        __metadata("design:paramnames", ["value"])
     ], MyComponent.prototype, "ref", null);
     return MyComponent;
 }());

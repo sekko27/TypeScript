@@ -50,11 +50,13 @@ var MyComponent = /** @class */ (function () {
         decorator,
         __metadata("design:type", Function),
         __metadata("design:paramtypes", [Object]),
+        __metadata("design:paramnames", ["x"]),
         __metadata("design:returntype", void 0)
     ], MyComponent.prototype, "method", null);
     MyComponent = __decorate([
         decorator,
-        __metadata("design:paramtypes", [service_1.default])
+        __metadata("design:paramtypes", [service_1.default]),
+        __metadata("design:paramnames", ["Service"])
     ], MyComponent);
     return MyComponent;
 }());

@@ -14,7 +14,8 @@ var A = /** @class */ (function () {
     A = __decorate([
         decorator,
         __param(1, decorator),
-        __metadata("design:paramtypes", [Number, String])
+        __metadata("design:paramtypes", [Number, String]),
+        __metadata("design:paramnames", ["a", "b"])
     ], A);
     return A;
 }());

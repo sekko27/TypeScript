@@ -55,7 +55,8 @@ var Class2 = /** @class */ (function () {
     __decorate([
         decorate,
         __metadata("design:type", Class1_1.Class1),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", []),
+        __metadata("design:paramnames", [])
     ], Class2.prototype, "prop", null);
     return Class2;
 }());

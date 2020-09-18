@@ -51,7 +51,8 @@ var A = /** @class */ (function () {
     __decorate([
         dec,
         __metadata("design:type", Number),
-        __metadata("design:paramtypes", [Number])
+        __metadata("design:paramtypes", [Number]),
+        __metadata("design:paramnames", ["value"])
     ], A.prototype, "x", null);
     return A;
 }());
@@ -67,7 +68,8 @@ var B = /** @class */ (function () {
     __decorate([
         dec,
         __metadata("design:type", Number),
-        __metadata("design:paramtypes", [Number])
+        __metadata("design:paramtypes", [Number]),
+        __metadata("design:paramnames", ["value"])
     ], B.prototype, "x", null);
     return B;
 }());
@@ -83,7 +85,8 @@ var C = /** @class */ (function () {
     __decorate([
         dec,
         __metadata("design:type", Number),
-        __metadata("design:paramtypes", [Number])
+        __metadata("design:paramtypes", [Number]),
+        __metadata("design:paramnames", ["value"])
     ], C.prototype, "x", null);
     return C;
 }());
@@ -99,7 +102,8 @@ var D = /** @class */ (function () {
     __decorate([
         dec,
         __metadata("design:type", Number),
-        __metadata("design:paramtypes", [Number])
+        __metadata("design:paramtypes", [Number]),
+        __metadata("design:paramnames", ["value"])
     ], D.prototype, "x", null);
     return D;
 }());
@@ -114,7 +118,8 @@ var E = /** @class */ (function () {
     __decorate([
         dec,
         __metadata("design:type", Object),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", []),
+        __metadata("design:paramnames", [])
     ], E.prototype, "x", null);
     return E;
 }());
@@ -129,7 +134,8 @@ var F = /** @class */ (function () {
     __decorate([
         dec,
         __metadata("design:type", Number),
-        __metadata("design:paramtypes", [Number])
+        __metadata("design:paramtypes", [Number]),
+        __metadata("design:paramnames", ["value"])
     ], F.prototype, "x", null);
     return F;
 }());
